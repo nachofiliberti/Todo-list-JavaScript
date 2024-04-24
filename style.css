@@ -1,0 +1,87 @@
+:root {
+    --color-primary: #022601;
+    --color-secundary: #03A688;
+    --color-terciary: #59463F;
+
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: cursive sans-serif;
+
+}
+
+body {
+    height: 100vh;
+    background-image: url(resource/img/flat-lay-blue-monday-concept-with-copy-space.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    background-color: var(--color-secundary);
+}
+
+#main-header {
+    border-radius: 5px;
+}
+
+#header-title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 2px black;
+}
+
+
+.container {
+    width: 60%;
+    margin-top: 4em;
+}
+
+.item {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    border-color: var(--color-terciary);
+    border-style: groove;
+    border-radius: 20px;
+}
+
+.content {
+    display: 1 1 0%;
+    width: 100%;
+    border-style: groove;
+    border-color: var(--color-terciary);
+}
+
+.error {
+    color: #721c24;
+    background-color: #f8d7da;
+    padding: .75rem;
+}
+
+
+header {
+    background-color: var(--color-secundary);
+}
+
+header h1 {
+    text-align: center;
+}
+
+.completed {
+    text-decoration: line-through;
+    background-color: var(--color-secundary);
+    color: #6c757d;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.noTask {
+    text-align: center;
+    margin-left: 0.5rem;
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding: 2px 6px;
+}
