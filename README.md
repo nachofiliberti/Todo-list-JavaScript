@@ -1,6 +1,6 @@
 # Challenge Todo-List - JavaScript
 
-Este es un simple proyecto de lista de tareas realizado en JavaScript, HTML y CSS.
+Este es un Challenge de una lista de tareas realizado en JavaScript, HTML y CSS.
 
 ## Requisitos
 
