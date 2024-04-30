@@ -6,14 +6,14 @@ eventListeners();
 
 function eventListeners() {
     document.addEventListener("DOMContentLoaded", () => {
-        tasks = JSON.parse(localStorage.getItem("tasks"));
+        tasks = JSON.parse(localStorage.getItem("tasks")) || [];
         createHTML();
     })
 
-    listTasks.addEventListener("click", function (e) {
+    taskList.addEventListener("click", function (e) {
         if (e.target.classList.contains("delete")) {
-            const taskId = e.target.closest("li").getAtribute("task-id");
-            deleteTask(taskId)
+            const taskId = e.target.closest("li").getAttribute("task-id");
+            deleteTask(taskId);
         }
     });
 }
@@ -62,7 +62,7 @@ function createHTML() {
             const li = document.createElement("li");
             li.classList.add("list-group-item");
             if (task.completed) {
-                li.classList.add("completed");            //aplico un estilo diferente si la tarea esta completa      
+                li.classList.add("completed");
             }
             li.innerHTML = `
             <div class="row">
@@ -73,10 +73,10 @@ function createHTML() {
                 <button onclick="completedTask(${task.id})" class="edit btn btn-outline-success" type="button">Completed</button>
                 <button onclick="deleteTask(${task.id})" class="delete btn btn-danger fa fa-trash"></button>
             </div>
-            </div>`;;
+            </div>`;
             li.setAttribute("task-id", task.id);
 
-            taskList.insertBefore(li, taskList.firstChild);      // cambie appendChild por insertBefore para que se agreguen al pricipio las nuevas tareas
+            taskList.insertBefore(li, taskList.firstChild);
         });
     } else {
         const noTaskMessage = document.createElement("h3");
@@ -88,7 +88,7 @@ function createHTML() {
     sincrolocalStorage();
 
     if (tasks.length > 10) {
-        taskList.style.overflowY = "auto";     // si hay mas de 10 tareas se agrega el scroll  
+        taskList.style.overflowY = "auto";
         taskList.style.maxHeight = "600px";
     }
 }
@@ -111,4 +111,3 @@ function showError(error) {
 function clearHTML() {
     taskList.innerHTML = "";
 }
-
